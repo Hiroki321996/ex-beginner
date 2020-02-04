@@ -5,12 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="@{/ex04/self-introduction}" method="post">
+<form action="@{/ex04/self-introduction}" th:object="${ex04Form}" method="post">
 <h3>ユーザー登録</h3>
-名前:<input type="text" name="nane"><br>
-年齢:<input type="text" name="age"><br>
+名前:<input type="text" name="nane" th:field="*{name}"><br>
+年齢:<input type="text" name="age" th:field="*{age}"><br>
 コメント:<br>
-<textarea name="comment" rows="5" cols="60"></textarea><br>
+<textarea name="comment" rows="5" cols="60" th:field="*{comment}"></textarea><br>
 <button>登録	</button>
 </form>
 </body>
