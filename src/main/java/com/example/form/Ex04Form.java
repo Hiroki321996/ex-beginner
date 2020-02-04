@@ -1,9 +1,15 @@
 package com.example.form;
 
-public class Ex04Form {
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
+public class Ex04Form {
+	@NotBlank(message="名前は必須です")
 	private String name;
+	@NotBlank(message="年齢は必須です")
 	private String age;
+	@NotBlank(message="コメントは必須です")
+	@Size(min=1, max=150, message="コメントは150以内で入力してください")
 	private String comment;
 
 	public String getName() {
