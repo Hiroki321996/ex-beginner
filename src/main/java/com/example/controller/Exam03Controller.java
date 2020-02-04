@@ -19,12 +19,16 @@ public class Exam03Controller {
 	}
 	
 	@RequestMapping("/result")
-	public String result(int num1,int num2, int num3) {
-		int sum = num1 + num2 + num3;
+	public String result(String item1,String item2, String item3) {
+		int numInt1 = Integer.parseInt(item1);
+		int numInt2 = Integer.parseInt(item2);
+		int numInt3 = Integer.parseInt(item3);
+		
+		int sum = numInt1+ numInt2 + numInt3;
 		int incluedTax =(int)(sum * 1.08);
 		
 		application.setAttribute("price", sum);
-		application.setAttribute("priceIncluededTax", incluedTax);
+		application.setAttribute("priceIncludedTax", incluedTax);
 		
 		return "exam03-result";
 	}
