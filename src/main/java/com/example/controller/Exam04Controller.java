@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.domain.User;
 import com.example.form.Ex04Form;
 
 @Controller
@@ -38,10 +39,16 @@ public class Exam04Controller {
 		if(result.hasErrors()) {
 			return index();
 		}
-		application.setAttribute("name", name);
-		application.setAttribute("age", age);
-		application.setAttribute("comment", comment);
+//		application.setAttribute("name", name);
+//		application.setAttribute("age", age);
+//		application.setAttribute("comment", comment);
 		
+		User user = new User();
+		user.setName(form.getName());
+		user.setAge(form.getIntAge());
+		user.setComment(form.getComment());
+		
+		application.setAttribute("user", user);
 		return "exam04-result";
 	}
 }

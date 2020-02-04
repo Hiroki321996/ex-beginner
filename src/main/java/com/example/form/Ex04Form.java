@@ -12,6 +12,10 @@ public class Ex04Form {
 	@Size(min=1, max=150, message="コメントは150以内で入力してください")
 	private String comment;
 
+	public int getIntAge() {
+		return Integer.parseInt(age);
+	}
+	
 	public String getName() {
 		return name;
 	}
